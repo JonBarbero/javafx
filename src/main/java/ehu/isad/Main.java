@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class Main extends Application {
@@ -28,7 +27,7 @@ public class Main extends Application {
     pantailakKargatu();
 
     stage.setTitle("Argazki Backup");
-    stage.setScene(new Scene(kautotuUI, 450, 275));
+    stage.setScene(new Scene(kautotuUI, 550, 375));
     stage.show();
   }
 

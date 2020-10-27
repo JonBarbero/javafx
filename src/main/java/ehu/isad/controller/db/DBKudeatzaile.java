@@ -55,7 +55,7 @@ public class DBKudeatzaile {
 
     public ResultSet execSQL(String query) {
         int count = 0;
-        Statement s = null;
+        Statement s;
         ResultSet rs = null;
         try {
             s = (Statement) conn.createStatement();

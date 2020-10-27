@@ -49,6 +49,7 @@ public class Liburuak extends Application {
     launch(args);
   }
 
+  //Liburua Internetetik lortu
   public void liburuaLortu() throws IOException {
     Book b=(Book) liburuakKud.comboZerbitzua.getValue();
     readFromUrl(b.isbn);
@@ -64,9 +65,9 @@ public class Liburuak extends Application {
   }
 
   private void aukerak() throws SQLException, IOException {
-
+    //2 aukera, jada kargatuta edo kargatu beharra
     Book book=(Book) liburuakKud.comboZerbitzua.getValue();
-    if(ZerbitzuKud.getInstance().liburuaKargatutaDago(book.getIsbn())==false){
+    if(!ZerbitzuKud.getInstance().liburuaKargatutaDago(book.getIsbn())){
       System.out.println("Datu basean kargatu egin behar da");
       liburuaLortu();
       String path=ZerbitzuKud.getInstance().irudiagorde(book.getIsbn(),this.book.getThumbnail_url().replace("S","M"));
@@ -101,7 +102,7 @@ public class Liburuak extends Application {
 
   public void readFromUrl(String isbn) throws IOException {
     URL api;
-    String inputLine = "";
+    String inputLine;
 
     try {
       api = new URL(" https://openlibrary.org/api/books?bibkeys=ISBN:"+isbn+"&jscmd=details&format=json");

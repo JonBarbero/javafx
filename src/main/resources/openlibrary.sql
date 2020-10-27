@@ -38,7 +38,7 @@ CREATE TABLE `liburua` (
 
 LOCK TABLES `liburua` WRITE;
 /*!40000 ALTER TABLE `liburua` DISABLE KEYS */;
-INSERT INTO `liburua` VALUES ('1491910399','R for Data Science',522,'O\'Reilly Media','/home/jon/Descargas/1491910399.jpg'),('1491946008','Fluent Python',792,'O\'Reilly Media','/home/jon/Descargas/1491946008.jpg'),('1491978236','Natural Language Processing with PyTorch',256,'O\'Reilly Media','/home/jon/Descargas/1491978236.jpg'),('9781491906187','Data Algorithms',778,'O\'Reilly Media','/home/jon/Descargas/9781491906187.jpg'),('9781491920497','Blockchain: Blueprint for a New Economy',152,'O\'Reilly Media','/home/jon/Descargas/9781491920497.jpg');
+INSERT INTO `liburua` VALUES ('1491910399','R for Data Science',0,'O\'Reilly Media','/home/jon/Descargas/1491910399.jpg'),('1491946008','Fluent Python',0,'O\'Reilly Media','/home/jon/Descargas/1491946008.jpg'),('1491978236','Natural Language Processing with PyTorch',0,'O\'Reilly Media','/home/jon/Descargas/1491978236.jpg'),('9781491906187','Data Algorithms',0,'O\'Reilly Media','/home/jon/Descargas/9781491906187.jpg'),('9781491920497','Blockchain: Blueprint for a New Economy',0,'O\'Reilly Media','/home/jon/Descargas/9781491920497.jpg');
 /*!40000 ALTER TABLE `liburua` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-27 18:59:09
+-- Dump completed on 2020-10-27 19:40:23

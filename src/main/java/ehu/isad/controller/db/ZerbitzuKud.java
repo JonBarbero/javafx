@@ -100,7 +100,6 @@ public class ZerbitzuKud {
         return liburua;
     }
 
-
     public Book datuakGorde(String kodea,String izena,String irudia,int orriKop,String argitaletxea) throws IOException, SQLException {
 
         Book book=new Book(kodea,izena);
@@ -119,7 +118,7 @@ public class ZerbitzuKud {
     }
     public void datuBaseanSartu(Book b,Book details){
         DBKudeatzaile dbKudeatzaile = DBKudeatzaile.getInstantzia();
-        String query = "update liburua set orriKop = '"+details.getDetails().getNumber_of_pages()+"' , argitaletxea = '"+details.getDetails().getPublishers()[0].replace("\'", "''")+"' , irudia = '"+details.getThumbnail_url().replace("S","M")+"' where (isbn = '"+b.getIsbn()+"');";
+        String query = "update liburua set orriKop = '"+details.getDetails().getNumber_of_pages()+"' , argitaletxea = '"+details.getDetails().getPublishers()[0].replace("'", "''")+"' , irudia = '"+details.getThumbnail_url().replace("S","M")+"' where (isbn = '"+b.getIsbn()+"');";
         dbKudeatzaile.execSQL(query);
         System.out.println("Datu basean ondo kargatu da");
         System.out.println ("Ez da arazorik egon");
@@ -132,7 +131,7 @@ public class ZerbitzuKud {
             return new Image(stream);
         }
     }
-    public String irudiagorde(String irudia,String kodea) throws IOException {
+    public String irudiagorde(String kodea,String irudia) throws IOException {
         Image img=createImage(irudia);
         return saveToFile(img,kodea);
     }
@@ -151,15 +150,13 @@ public class ZerbitzuKud {
 
     public Image irudialortu(String path){
         BufferedImage img = null;
-        try
-        {
+        try{
             img = ImageIO.read(new File(path));
         }
-        catch (IOException e)
-        {
+        catch (IOException e){
             e.printStackTrace();
         }
-        Image image = SwingFXUtils.toFXImage(img, null);
-        return image;
+        assert img != null;
+        return SwingFXUtils.toFXImage(img, null);
     }
 }
